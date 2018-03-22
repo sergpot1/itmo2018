@@ -146,15 +146,13 @@ public class dzfriday {
 
         System.out.println("\n11th task");
         int summa_ch = 0;
-        int o; //schet
+        int o, h; //schet
         int a1, a2, a3, a4;
-        for (o = 0000; o <= 2359 ;o++){
-            a1 = o / 1000;
-            a2 = (o / 100) % 10;
-            a3 = o % 10 % 10;
-            a4 = o % 10;
-            if (a1 == a4 && a2 == a3){
-                summa_ch++;
+        for (h = 1; h < 24 ; h++){
+            for (o = 0; o <= 59; o++) {
+                if (h / 10 % 10 == o % 10 & h % 10 == o / 10 % 10) {
+                    summa_ch++;
+                }
             }
         }
         System.out.println("Совпадений комбинаций " + summa_ch);
