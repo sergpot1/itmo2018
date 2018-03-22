@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class dzfriday {
     public static void main(String[] args) {
         System.out.println("\n1st task");
@@ -147,7 +145,6 @@ public class dzfriday {
         System.out.println("\n11th task");
         int summa_ch = 0;
         int o, h; //schet
-        int a1, a2, a3, a4;
         for (h = 1; h < 24 ; h++){
             for (o = 0; o <= 59; o++) {
                 if (h / 10 % 10 == o % 10 & h % 10 == o / 10 % 10) {
