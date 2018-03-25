@@ -1,4 +1,3 @@
-import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -95,7 +94,7 @@ public class dz2603 {
         }
 
 
-        /*System.out.println("\n6th task");
+        System.out.println("\n6th task");
         int p;
         int right = 0, left = 0;
         Scanner scn = new Scanner(System.in);
@@ -130,7 +129,7 @@ public class dz2603 {
                     }
                 }
             }
-        } else System.out.println("Введено не число");*/
+        } else System.out.println("Введено не число");
 
 
 
@@ -199,9 +198,9 @@ public class dz2603 {
 
 
         System.out.println("\n10th task");
-        Scanner scn = new Scanner(System.in);
+        Scanner scn1 = new Scanner(System.in);
         System.out.println("Введите строку");
-        String stroka = scn.nextLine();
+        String stroka = scn1.nextLine();
         String result = new StringBuilder(stroka).reverse().toString();
         result = result.replaceAll("(.)(?=.*\\1)", "");
         result = result.replaceAll("\\s+","");
@@ -209,8 +208,14 @@ public class dz2603 {
         System.out.println(result);
 
 
-
-
+        System.out.println("\n11th task");
+        char maschar[];
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите строку");
+        String str11 = scan.nextLine();
+        String strEnd = str11.replaceAll("\\D", "");
+        maschar = strEnd.toCharArray();
+        System.out.println(Arrays.toString(maschar));
 
 
 
