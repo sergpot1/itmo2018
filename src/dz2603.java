@@ -100,6 +100,9 @@ public class dz2603 {
         Scanner scn = new Scanner(System.in);
         System.out.println("Введите четное число");
 
+        while (!scn.hasNextInt()){
+            System.out.println("Введено неверное значение. Введите четное положительное число");
+            scn.next();}
         if (scn.hasNextInt()) {
             do {
                 p = scn.nextInt();
@@ -209,14 +212,15 @@ public class dz2603 {
 
 
         System.out.println("\n11th task");
-        char maschar[];
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите строку");
         String str11 = scan.nextLine();
         String strEnd = str11.replaceAll("\\D", "");
-        maschar = strEnd.toCharArray();
-        System.out.println(Arrays.toString(maschar));
-
+        int arrInt [] = new int[strEnd.length()];
+        for (int i =0; i < strEnd.length(); i++ ){
+            arrInt[i] = Integer.parseInt(String.valueOf(strEnd.charAt(i)));
+        }
+        System.out.println(Arrays.toString(arrInt));
 
 
 
