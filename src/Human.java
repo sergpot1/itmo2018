@@ -3,6 +3,7 @@ public class Human {
     boolean walking; // false
     String name; // null
     int age; // 0
+    Animal animal;
 
     public static void main(String [] args){
         Human ivan = new Human("ivan", 23); // тип переменной (имя класса) переменная -> новый объект
@@ -11,7 +12,9 @@ public class Human {
         ivan.walk();
 //        ivan.setName("ivan");
         ivan.stop();
-        System.out.println(ivan.getName());
+        Animal cat = new Animal("tolik", "grey");
+        ivan.addPet(cat);
+//        System.out.println(ivan.getName());
     }
 
     public Human(String name, int age){
@@ -24,7 +27,11 @@ public class Human {
 
 
     public void walk() {
-        System.out.println("walking...");
+        if (!walking){
+            System.out.println("walking...");
+            walking = true;
+        }
+        System.out.println("Already walking...");
     }
 
 
@@ -41,22 +48,29 @@ public class Human {
         return age;
     }
 
-
-
-
-    public void stop(){
-        System.out.println("Stop...");
+    public void addPet(Animal animal){
+        this.animal = animal;
     }
 
 
 
+    public void stop(){
+        if (walking){
+        System.out.println("Stop...");
+        walking = false;
+        } else {
+            System.out.println("Already stop...");
+        }
+    }
+}
 
+class Animal{
+    String name;
+    String color;
+    int age;
 
-
-
-
-
-
-
-
+    public Animal(String name, String color){
+       this.name = name;
+       this.color = color;
+    }
 }
