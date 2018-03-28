@@ -5,7 +5,7 @@ public class dz2603 {
     public static void main(String[] args){
 
         System.out.println("\n1st task");
-        int arr1[] = new int[9];
+        int arr1[] = new int[10];
         for(int i = 0, a = 2; i < arr1.length; i++, a += 2){
             arr1[i] = a;
             System.out.print("\n" + arr1[i]);
@@ -17,7 +17,7 @@ public class dz2603 {
         System.out.println("\n2nd task");
 
         int k=0;
-        for(int i=1; i<99; i++){
+        for(int i=1; i<=99; i++){
             if(i%2 != 0) k++;
         }
 
@@ -28,7 +28,7 @@ public class dz2603 {
         }
         System.out.println(Arrays.toString(arr2));
 
-        for(int i = 0, a = 97; i < arr2.length; i++, a -= 2){
+        for(int i = 0, a = 99; i < arr2.length; i++, a -= 2){
             arr2[i] = a;
         }
         System.out.println(Arrays.toString(arr2));
@@ -75,23 +75,24 @@ public class dz2603 {
 
         System.out.println("\n5th task");
         int arr6[] = new int [4];
-
+        boolean check = true;
         for (int i = 0; i < arr6.length ;i++) {
             arr6[i] = (int) (10 + Math.random() * (90));
-        }
-        System.out.println(Arrays.toString(arr6));
-
-        for (int i = 0; i < arr6.length; i++){
-            if (i>0){
-                if (arr6[i-1] >= arr6[i]) {
-                    System.out.println("Последовательность в массиве не явлется возрастающей");
-                    break;
+            for (int j = 0; j < arr6.length; j++) {
+                if (j > 0) {
+                    if (arr6[j - 1] >= arr6[j]) {
+                        break;
+                    }
+                }
+                if (j == arr6.length - 1) {
+                    check = false;
                 }
             }
-            if (i == arr6.length - 1){
-                System.out.println("Последовательность в массиве строго возрастающая");
-            }
         }
+        System.out.println(Arrays.toString(arr6));
+        if (check) {
+            System.out.println("Последовательность в массиве не явлется возрастающей");
+        } else System.out.println("Последовательность в массиве строго возрастающая");
 
 
         System.out.println("\n6th task");
@@ -215,10 +216,12 @@ public class dz2603 {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите строку");
         String str11 = scan.nextLine();
-        String strEnd = str11.replaceAll("\\D", "");
-        int arrInt [] = new int[strEnd.length()];
-        for (int i =0; i < strEnd.length(); i++ ){
-            arrInt[i] = Integer.parseInt(String.valueOf(strEnd.charAt(i)));
+        String strEnd = str11.replaceAll("\\D+", " ");
+        strEnd = strEnd.trim();
+        String resultStr [] = strEnd.split(" ");
+        int arrInt [] = new int[resultStr.length];
+        for (int i = 0; i < resultStr.length; i++ ){
+            arrInt[i] = Integer.parseInt(resultStr[i]);
         }
         System.out.println(Arrays.toString(arrInt));
 
