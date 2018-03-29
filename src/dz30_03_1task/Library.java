@@ -8,7 +8,7 @@ public class Library {
 
     public static void put(Book book, int quantity) {
         if (bookTotal + quantity > maxTotal) {
-            System.out.println("Иди на хуй");
+            System.out.println("Превышено максимальное количество книг");
 
         } else {
             booksMap.put(book, quantity);
@@ -23,7 +23,7 @@ public class Library {
 
             if (key.equals(book)) {
                 if (booksMap.get(book) < quantity) {
-                    System.out.println("Мать ебал");
+                    System.out.println("Запрашивамое количество книг превышает допустимое значение");
                     break;
                 } else {
                     booksMap.put(book, booksMap.get(book) - quantity);
