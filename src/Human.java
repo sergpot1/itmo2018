@@ -17,6 +17,7 @@ public class Human {
 //        System.out.println(ivan.getName());
     }
 
+
     public Human(String name, int age){
         this.name = name;
         this.age = age;
@@ -65,6 +66,7 @@ public class Human {
 }
 
 class Animal{
+
     String name;
     String color;
     int age;

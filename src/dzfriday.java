@@ -1,4 +1,5 @@
 public class dzfriday {
+
     public static void main(String[] args) {
         System.out.println("\n1st task");
         double m, n;
