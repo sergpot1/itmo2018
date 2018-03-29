@@ -1,47 +1,37 @@
-import java.util.HashMap;
+import java.util.*;
 
 public class Library {
-    private int size = 100;
-    private int bookcounter;
 
-    Library() {
-        this.booksMap = new HashMap<>();
-    }
+    static HashMap<Book, Integer> booksMap = new HashMap<>();
+    static int maxTotal = 30;
+    static int bookTotal;
 
-    public void putBook(Book book, int quantity) {
-
-        if (size > bookcounter + quantity) {
-            if (booksMap.containsKey(book)) {
-                booksMap.computeIfPresent(book, (k, v) -> v + quantity);
-            } else {
-                booksMap.put(book, quantity);
-            }
-
-            System.out.println(quantity + " books was added to library");
-            bookcounter = bookcounter + quantity;
+    public static void put(Book book, int quantity) {
+        if (bookTotal + quantity > maxTotal) {
+            System.out.println("Иди на хуй");
 
         } else {
-            System.out.println("There are too many books");
+            booksMap.put(book, quantity);
+            bookTotal = bookTotal + quantity;
         }
-
     }
 
-    public int getBook(Book book, int quantity) {
+    public static void get(Book book, int quantity) {
 
-        if (booksMap.containsKey(book)) {
-            if (booksMap.get(book) >= quantity) {
-                booksMap.computeIfPresent(book, (k, v) -> v - quantity);
-                bookcounter = bookcounter - quantity;
-                return quantity;
-            } else {
-                System.out.println("There are not enough: " + book.getAuthor() + " " + book.getTitle() + " " + book.getPagesNum());
-                return 0;
+        for (Map.Entry<Book, Integer> pair : booksMap.entrySet()) {
+            Book key = pair.getKey();
+
+            if (key.equals(book)) {
+                if (booksMap.get(book) < quantity) {
+                    System.out.println("Мать ебал");
+                    break;
+                } else {
+                    booksMap.put(book, booksMap.get(book) - quantity);
+                    // уменьшаем количество книг по ключу
+                }
+
             }
-        } else {
-            System.out.println("There are no: " + book.getAuthor() + " " + book.getTitle() + " " + book.getPagesNum());
-            return 0;
         }
-
     }
-
 }
+
