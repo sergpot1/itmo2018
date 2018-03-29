@@ -1,6 +1,4 @@
-package task2Figure;
-
-class figure {
+class task2Figure {
     public static void main(String[] args){
         Circle circle = new Circle(12, 4.5, 3, 6);
         System.out.println("\n");

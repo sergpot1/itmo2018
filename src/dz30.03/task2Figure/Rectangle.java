@@ -1,5 +1,3 @@
-package task2Figure;
-
 public class Rectangle {
     private double x1, x2, x3;
     private double y1, y2, y3;

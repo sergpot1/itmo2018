@@ -1,5 +1,3 @@
-package task2Figure;
-
 public class Circle {
         private double x1, x2;
         private double y1, y2;
